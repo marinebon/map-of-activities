@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>map-of-activities - Marine Biodiversity Observation Network (MBON)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
+<link href="site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
+<script src="site_libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
+<script src="site_libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
+<script src="site_libs/leaflet-binding-2.1.1/leaflet.js"></script>
+<script src="site_libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
+<script src="site_libs/leaflet-providers-plugin-2.1.1/leaflet-providers-plugin.js"></script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">map-of-activities</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page">Home</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html">About</a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Marine Biodiversity Observation Network (MBON)</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+<div class="cell-output-display">
+<div id="htmlwidget-3cbd8109e4edba16fd0f" style="width:100%;height:464px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3cbd8109e4edba16fd0f">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addProviderTiles","args":["Stamen.Toner",null,"Toner",{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addProviderTiles","args":["Esri.OceanBasemap",null,"Ocean",{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addCircleMarkers","args":[[-38.0939222,-38.0203,-42.78511,-42.77986,-42.8112,-62.1989,-62.1858,-22.9863,-22.9687,-22.9602,-22.964,-25.573,-25.5735,-25.59734,-20.0369,-19.9663,-20.0726,-3.8505,-0.9169,-22.29,-23.8292,-23.8436,-23.8319,-31.945397,-32.224484,-32.9587,-36.5941,-36.6091,-36.5408,-53.6125,2.9591,2.9341,2.9472,10.5916,9.6399,9.5787,-0.752,-0.7434,-0.7529,-0.7614,-0.7634,-0.7619,-2.2061,-2.1995,21.2803,-9.128611,-33.8109,10.498,18.39,10.79936,10.78416,10.75813,10.83559,10.83379,24.5,66.9412,43.439808,43.884304,43.725666,44.371365,44.788076,42.507375,44.731602,42.416788,57.02249908,56.98661041,57.04869843,37.82500076,34.4671402,48.45730972,34.00556946,34.00590134,34.00659943,43.30894089,34.47343826,36.6222496,37.7011795,38.31819916,34.55387878,44.24456024,37.90354156,42.22814178,32.66947174,32.66765976,32.6658287,36.54375839,32.99983978,34.38703156,35.44739151,36.60615921,33.00112152,32.91801071,32.8030014,33.01477051,34.40692902,33.57078171,33.45145035,33.38499069,33.4598999,41.65248871,37.69809341,41.68999863,48.59344101,45.91809082,41.59476089,44.83863831,37.1495018,48.15049362,48.546024,36.46903992,34.4433403,47.30255127,48.52220917,48.52352905,35.28966141,47.62841797,36.62120056,39.60411835,48.39147186,47.57688141,36.5,35.97964859,40.3409996,37.69589996,36.28060913,34.35548019,32.69260025,32.6828804,34.88122177,34.06612015,36.17375946,35.66492844,34.01200867,37.23263168,36.56108856,36.63795853,48.24200058,48.7120018,37.18360901,35.72882843,37.81911087,33.70679092,36.51366043,34.75559998,35.94704819,35.52244186,36.9801712,33.48157883,48.53710175,48.53430176,33.47201157,34.06264877,34.04507828,34.02037811,32.8716507,34.04552078,37.04425049,34.05186844,33.96183014,38.73049927,47.65269852,35.1688118,33.54476929,40.02254105,35.60414124,37.87406158,38.01242828,34.04854965,34.02159119,34.07337189,34.05202866,33.26713562,33.27446365,33.21868134,33.28504944,36.44786835,47.94709015,33.94269943,33.91453171,33.9931488,33.90871811,34.00957108,34.73038101,38.93787003,33.03509903,36.56087112,47.8660202,36.94841003,33.51335144,33.71538925,45.222418,45.154808],[-57.541275,-57.5653,-64.95264,-65.00171,-64.9017,-58.9494,-58.8732,-42.01,-42.015,-42.0193,-42.042,-48.3098,-48.3107,-48.380914,-40.164,-40.134,-40.1752,-32.4238,-29.3458,-41.67,-45.4237,-45.4076,-45.4436,-52.068477,-52.0936,-71.5492,-72.9786,-72.9805,-72.9346,-70.9284,-78.1979,-78.2017,-78.1979,-85.6637,-82.6481,-85.1375,-90.3094,-90.3037,-90.3113,-90.335,-90.3404,-90.3304,-80.8831,-80.8721,-89.7006,-78.596388,-53.4461,-67.768,-64.93,-61.31513,-61.39261,-61.43537,-60.92015,-60.94739,-81,-168.63774,-70.343454,-69.47609,-69.992283,-68.091242,-67.010388,-70.843271,-67.098585,-70.906496,-135.35387,-135.37755,-135.32314,-122.42194,-120.27738,-123.02222,-119.41925,-119.39649,-119.41077,-124.40077,-120.1454,-121.94161,-123.00383,-123.07365,-120.61167,-124.11443,-122.72721,-124.38786,-117.2455,-117.24526,-117.24417,-121.93412,-117.27867,-119.51407,-120.94982,-121.95939,-118.54832,-118.54668,-118.42431,-118.60613,-119.87804,-117.83773,-118.48763,-118.4752,-117.71475,-124.12784,-122.99984,-124.14257,-123.1555,-123.98031,-124.10643,-124.05875,-122.36101,-123.63699,-123.012987,-121.93444,-120.45655,-124.27531,-122.54353,-122.55222,-120.88325,-122.95034,-121.9073,-123.78887,-124.65372,-122.54411,-122,-121.49034,-124.36317,-123.0029,-121.86317,-119.44073,-117.25327,-117.24956,-120.63954,-118.99779,-121.69653,-121.28699,-118.79225,-122.41607,-121.95436,-121.93758,-124.70779,-122.51913,-122.39529,-121.31866,-122.52935,-118.28599,-121.94688,-120.64076,-121.48053,-121.073,-122.15503,-119.02958,-122.5547,-122.5549,-119.03066,-119.91915,-119.72188,-119.6867,-117.25328,-119.54685,-122.23493,-119.9032,-119.75495,-123.48864,-124.3905,-120.69668,-117.79941,-124.07366,-121.14232,-122.60094,-122.84915,-120.33642,-120.37887,-120.36322,-120.40758,-119.48723,-119.57676,-119.49562,-119.52983,-121.92874,-124.66229,-119.96797,-120.05024,-120.23758,-120.08629,-120.2176,-120.61546,-123.7288,-117.29425,-121.94053,-124.57004,-122.06457,-117.75793,-118.31961,-65.951475,-66.22843],2,null,"Pole to Pole",{"interactive":true,"className":"","stroke":true,"color":"#03F","weight":5,"opacity":0.5,"fill":true,"fillColor":"#03F","fillOpacity":0.2},null,null,null,null,["Mar del Plata - Faro","Mar del Plata - Playa Chica","[Punta Este](http://www.northeastern.edu/helmuthlab/Research/gigapan/argentina.html#_ga=2.176170668.804414391.1602182240-113605171.1602182239)","Punta Cuevas","[Punta Loma](http://www.northeastern.edu/helmuthlab/Research/gigapan/argentina.html#_ga=2.176170668.804414391.1602182240-113605171.1602182239)","Antarctica - Site 1","Antarctica - Site 2","Arraial do Cabo - Atalaia","Arraial do Cabo - Fortaleza","Arraial do Cabo - Prainha","Arraial do Cabo - Praia Grande","Encantadas North","Encantadas South","Atami","Costa das Algas - Enseada das Garcas","Costa das Algas - Gramute","Costa das Algas - Costa Bela","Fernando de Noronha - Boldro","Saint Peter and Saint Paul Archipelago - Enseada","Jurubatiba National Park","Sao Sebastiao - Baleeiro Head","Sao Sebastiao - Feiticeira","Sao Sebastiao - Itassuce Island","Lagoa dos Patos - Estuario","Lagoa dos Patos - Costa Marinha","Bahia de Valparariso - Montemar","Concepcion - Cocholgue Norte","Concepcion - Cocholgue Sur","Concepcion - Dichato / Coliumo","Punta Arenas - Bahpa Mansa","Isla Gorgona - La Mancora","Isla Gorgona - La Ventana","Isla Gorgona - Playa Verde","Esmeralda","Punta Mona","San Miguel","Angermeyer Point - Galapagos Islands","La Ratonera - Galapagos Islands","Playa Alemanes - Galapagos Island","Playa Brava - Galapagos Islands","Playa Mansa - Galapagos Islands","Tortuga Bay - Galapagos Islands","Ballenita - El Faro","Ballenita - La Barca","Yucatan - Marina de Yucalpeten","Bahia de Chimbote","Barra del Chuy","La Boca - Ocumare","USVI","Blanchiseusse Bay","Las Cuevas","Maracas","Salybia","Toco","[South Florida Program](https://www.aoml.noaa.gov/iea/)","Arctic MBON - Chukchi Sea","Biddeford - Biddeford ME","[Chamberlain](http://www.northeastern.edu/helmuthlab/Research/gigapan/USME/USME.html#_ga=2.114804366.804414391.1602182240-113605171.1602182239)","Giant Stairs - Harpswell ME","[Grindstone](http://www.northeastern.edu/helmuthlab/Research/gigapan/USME/USME.html#_ga=2.114804366.804414391.1602182240-113605171.1602182239)","Hamilton Cove - Lubec ME","Marblehead - Marblehead MA","Moose Cove - Lubec ME","Pumphouse - Nahant MA","Kayak Island","Pirates Cove","Sage Rock","Alcatraz","Alegria","American Camp","Cat Rock","Middle West","S Frenchys Cove","Cape Arago","Arroyo Hondo","Asilomar","Blowhole","Bodega","Boat House","Bob Creek","Bolinas Point","Burnt Hill","Cabrillo I","Cabrillo II","Cabrillo III","Carmel Point","Cardiff Reef","Carpinteria","Cayucos","China Rocks","Boy Scout Camp","Eel Point","Horse Beach Cove","West Cove","Coal Oil Point","Crystal Cove","Bird Rock","Little Harbor","Dana Point","Damnation Creek","Dead Sea Lion Flat","Enderts","English Camp","Ecola","False Klamath Cove","Fogarty Creek","Franklin Point","Freshwater Bay","Friday Harbor","Garrapata","Government Point","Point Grenville","Hat Island East","Hat Island West","Hazards","McDonald Cove","Hopkins","Kibesillah Hill","Kydikabbit Point","Manchester State Park","[Monterey Bay Time Series](https://www.mbari.org/products/what-is-happening-in-monterey-bay-today/)","Mill Creek","Cape Mendocino","Mussel Flat Farallones","Andrew Molera","Mussel Shoals","Navy North","Navy South","Occulto","Old Stairs","Partington Cove","Piedras Blancas","Paradise Cove","Pebble Beach","Pescadero Point","Point Pinos","Point of the Arches","Post Point","Pigeon Point","Point Sierra Nevada","Point Bonita","Point Fermin","Point Lobos","Purisima","Pacific Valley","Rancho Marino","Sandhill Bluff","Landing Cove","Saddlebag North Cove","Saddlebag South East","Sea Lion Rookery","Fraser Cove","Orizaba Cove","Prisoners Harbor","Scripps Reef","Scorpion Rock","Scott Creek","Trailer","Willows Anchorage","Sea Ranch","Starfish Point","Shell Beach","Shaws Cove","Shelter Cove","Vista del Mar","Slide Ranch","Santa Maria Creek","Cuyler Harbor","Crook Point","Harris Point","Otter Harbor","Anchor Point","Cosign","Marker Poles","Thousand Springs","Soberanes","Sokol Point","East Point","Ford Point","Fossil Reef","Johnsons Lee","NW Talcott","Stairs","Stornetta","Swamis Beach","Stillwater","Taylor Point","Terrace Point","Treasure Island","White Point","Mispec Beach","Black Beach"],{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addLayersControl","args":[["Ocean","Toner"],"Pole to Pole",{"collapsed":false,"autoZIndex":true,"position":"topright"}]}],"limits":{"lat":[-62.1989,66.9412],"lng":[-168.63774,-29.3458]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

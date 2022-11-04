@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Marine Biodiversity Observation Network (MBON)",
+    "section": "",
+    "text": "source(\"lib/functions.R\")\n\nLoading required package: librarian\n\n\n\n  The 'cran_repo' argument in shelf() was not set, so it will use\n  cran_repo = 'https://cran.r-project.org' by default.\n\n  To avoid this message, set the 'cran_repo' argument to a CRAN\n  mirror URL (see https://cran.r-project.org/mirrors.html) or set\n  'quiet = TRUE'.\n\nmbon_map()"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "1 + 1\n\n[1] 2"
+  }
+]
