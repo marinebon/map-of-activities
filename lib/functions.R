@@ -3,7 +3,8 @@ if (!require("librarian")){
   install.packages("librarian") }
 librarian::shelf(
   dplyr, fs, geojsonsf, glue, here, httr2, leaflet,
-  mapview, purrr, readr, sf, stringr, tibble, zip)
+  mapview, purrr, readr, sf, stringr, tibble, zip,
+  cran_repo = "https://cloud.r-project.org")
 options(readr.show_col_types = F)
 
 # functions ----
