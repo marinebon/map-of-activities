@@ -32,6 +32,7 @@ dl_goos <- function(pk, alternate, ...){
 }
 
 goos_sf <- function(alternate, ...){
+  # alternate = d$alternate[[4]]
 
   req_geo <- request(goos_ows) %>%
     req_url_query(
@@ -42,11 +43,8 @@ goos_sf <- function(alternate, ...){
       outputFormat = "json",
       srs          = "EPSG:4326",
       srsName      = "EPSG:4326")
-  # browser()
 
   message(glue("alternate:\n\t{alternate}\nreq_geo$url:\n\t{req_geo$url}"))
-  # if (alternate == "geonode:european_arms_program")
-  #   browser()
   r <- try(suppressWarnings(geojson_sf(req_geo$url)))
   if (inherits(r, "try-error"))
     return(NA)
@@ -71,8 +69,8 @@ d <- tibble(
   alternate  = map_chr(r, "alternate"),
   pk         = map_chr(r, "pk") %>% as.integer()) %>%
   select(-r)
-
 write_csv(d, d_csv)
+#  d <- read_csv(d_csv)
 
 # match dataset key `ds_key` ----
 stopifnot(file.exists(d_key_csv))
@@ -100,7 +98,7 @@ d %>%
   filter(!is.na(sf)) %>%
   pwalk(function(sf, ds_key, ...){
     ds_geo <- here(glue("data/{ds_key}.geojson"))
-    write_sf(sf, ds_geo)
+    write_sf(sf, ds_geo, delete_dsn = T)
   })
 
 d %>%
@@ -114,8 +112,5 @@ d %>%
     shp <- dir_ls(dl_dir, glob = "*.shp")[1]
 
     read_sf(shp) %>%
-      write_sf(ds_geo)
+      write_sf(ds_geo, delete_dsn = T)
   })
-
-# ply <- geojson_sf(r_geo$url)
-# mapview(ply)

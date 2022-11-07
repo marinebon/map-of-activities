@@ -10,13 +10,15 @@ source("lib/functions.R")
 mbon_activities_map()
 ```
 
-This map so far is a quick mockup of data combined from these sources:
+This map (code: `mbon_activities_map()` in [functions.R](https://github.com/marinebon/map-of-activities/blob/main/lib/functions.R)) so far is a quick mockup of data combined from these sources:
 
 -   [Map of MBON Activities - Upload Form](https://docs.google.com/forms/d/e/1FAIpQLScEGBgY0liaIjY3cT4Celzz6XbU72NfMNo_U89TtKMU7G-s_g/viewform?usp=sf_link)\
-    source & files: [mbon-cross - Google Drive](https://drive.google.com/drive/folders/16Px-nka478LjmDhB5wPRMGaZsuH3V5Gk)
+    source & files: [mbon-cross - Google Drive](https://drive.google.com/drive/folders/16Px-nka478LjmDhB5wPRMGaZsuH3V5Gk)\
+    code: [process_goosocean.R](https://github.com/marinebon/map-of-activities/blob/main/lib/process_goosocean.R) → [p2p.geojson](https://github.com/marinebon/map-of-activities/blob/main/data/p2p.geojson)
 
 -   [Search for "MBON" - GOOS BioEco GeoNode](https://geonode.goosocean.org/search/?title__icontains=MBON&abstract__icontains=MBON&purpose__icontains=MBON&f_method=or&limit=5&offset=0)\
-    GOOS Biology and Ecosystems GeoNode
+    GOOS Biology and Ecosystems GeoNode\
+    code: [process_uploads.R](https://github.com/marinebon/map-of-activities/blob/main/lib/process_uploads.R) → [sbc.geojson](https://github.com/marinebon/map-of-activities/blob/main/data/sbc.geojson), [sfl.geojson](https://github.com/marinebon/map-of-activities/blob/main/data/sfl.geojson)
 
 TODO: Incorporate spatial footprints of MBON activities from work by Matthew Biddle, Abby Benson et al.:
 

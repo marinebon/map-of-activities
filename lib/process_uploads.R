@@ -12,7 +12,7 @@ d <- tibble(
   filter(b != "Icon\r") %>%
   mutate(
     to = glue("{dir_upload}/{b}"))
-file_copy(d$f, d$to)
+file_copy(d$f, d$to, overwrite = T)
 
 # Pole to Pole Sites (Enrique Montes) ----
 
@@ -27,4 +27,4 @@ stopifnot(file.exists(p2p_csv))
 read_csv(p2p_csv) %>%
   st_as_sf(
     coords = c("lon", "lat"), crs = 4326) %>%
-  write_sf(p2p_geo)
+  write_sf(p2p_geo, delete_dsn = T)

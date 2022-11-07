@@ -9,31 +9,26 @@ options(readr.show_col_types = F)
 # functions ----
 mbon_activities_map <- function(){
 
-  # * activities with spatial ----
-  # d <- read_csv(here("data/_activities.csv")) %>%
-  #   mutate(
-  #     geo       = glue("{dir_data}/{geojson}"),
-  #     sf        = map(geo, read_sf),
-  #     geom = map(sf, function(x){
-  #       st_geometry(x) %>%
-  #         st_union()}))
-
-  # * leaflet map ----
   leaflet() %>%
+    # * basemaps ----
     addProviderTiles(
       providers$Stamen.Toner, group = "Toner") %>%
     addProviderTiles(
       providers$Esri.OceanBasemap, group = "Ocean") %>%
+    # * p2p ----
     addCircleMarkers(
       data = read_sf(here("data/p2p.geojson")),
       group = "Pole to Pole",
       label = ~name, radius = 1) %>%
+    # * sbc ----
     addPolygons(
       data = read_sf(here("data/sbc.geojson")),
       group = "Santa Barbara Channel") %>%
+    # * sfl ----
     addPolygons(
       data = read_sf(here("data/sfl.geojson")),
       group = "South Florida") %>%
+    # * layers ----
     addLayersControl(
       baseGroups = c(
         "Ocean", "Toner"),
