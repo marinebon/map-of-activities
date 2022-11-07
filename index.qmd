@@ -1,5 +1,5 @@
 ---
-title: "Marine Biodiversity Observation Network (MBON)"
+title: "Map of Activities"
 editor: visual
 ---
 
@@ -7,5 +7,22 @@ editor: visual
 #| echo: false
 #| warning: false
 source("lib/functions.R")
-mbon_map()
+mbon_activities_map()
 ```
+
+This map so far is a quick mockup of data combined from these sources:
+
+-   [Map of MBON Activities - Upload Form](https://docs.google.com/forms/d/e/1FAIpQLScEGBgY0liaIjY3cT4Celzz6XbU72NfMNo_U89TtKMU7G-s_g/viewform?usp=sf_link)\
+    source & files: [mbon-cross - Google Drive](https://drive.google.com/drive/folders/16Px-nka478LjmDhB5wPRMGaZsuH3V5Gk)
+
+-   [Search for "MBON" - GOOS BioEco GeoNode](https://geonode.goosocean.org/search/?title__icontains=MBON&abstract__icontains=MBON&purpose__icontains=MBON&f_method=or&limit=5&offset=0)\
+    GOOS Biology and Ecosystems GeoNode
+
+TODO: Incorporate spatial footprints of MBON activities from work by Matthew Biddle, Abby Benson et al.:
+
+-   [MBON dataset registration](https://docs.google.com/forms/d/e/1FAIpQLSfguACbLmcLiFxHKsR5W5Mv9nEfd0E8oX2rY78gdwAYTrq_zA/viewform)
+
+-   OBIS notebook\
+    link? missed it in [notes X-MBON Meeting 2022-11-01 to -04 - Google Doc](https://docs.google.com/document/d/1RzGZSnycUchnRfcca5wbBSi0nioNqkTL8PxVhhgmf0E/edit#)\
+
+    \

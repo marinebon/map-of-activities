@@ -1,0 +1,98 @@
+---
+title: "Gapminder data using crosstalk"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    theme: lumen
+    source_code: embed
+---
+
+```{r setup, include=FALSE}
+librarian::shelf(
+  crosstalk, dplyr, flexdashboard, here, rgdal)
+```
+
+```{r, eval=F, echo=F}
+## These are the steps for creating (and writing) the SpatialPolygonsDataFrame using data from the gapminder package and the boundary vector layer supplied by www.naturalearthdata.com in the rworldmap package.
+librarian::shelf(
+  countrycode, gapminder, rworldmap, spatialEco)
+
+df <- gapminder %>% 
+  filter(year == 2007) %>% 
+  mutate(
+    ISO3      = countrycode(country, "country.name", "iso3c"), 
+    gdpPercap = round(gdpPercap, 0), 
+    lifeExp   = round(lifeExp, 0))
+
+data(countriesLow)
+world <- countriesLow
+world <- sp::merge(world, df, by.x = "ISO3", by.y = "ISO3", sort = FALSE)
+world <- world[, c("country", "continent.y",  "year", "lifeExp", "pop", "gdpPercap")]
+world_NA <- world[is.na(world@data$country) ,]
+writeOGR(world_NA, ".", "world_NA", driver="ESRI Shapefile")
+world <- sp.na.omit(world, col.name = "country")
+writeOGR(world, "data", "world", driver="ESRI Shapefile")
+```
+
+
+```{r}
+world <- readOGR(here("data"), "world", verbose = FALSE)
+world@data <- rename(world@data, continent = cntnnt_)
+world_NA <- readOGR(here("data"), "world_NA", verbose = FALSE)
+
+sd <- SharedData$new(world)
+```
+
+Inputs {.sidebar}
+-----------------------------------------------------------------------
+
+```{r}
+filter_slider("lifeExp", "Life expectancy (years)", sd$transform(as.data.frame), ~lifeExp)
+filter_slider("gdpPrcp", "Income per person ($)", sd$transform(as.data.frame), ~gdpPrcp)
+```
+
+---
+
+
+
+This [R Markdown](http://rmarkdown.rstudio.com/) document uses the experimental [crosstalk](https://github.com/rstudio/crosstalk) R package to enable interactivity between different widgets that display the same [Gapminder](https://www.gapminder.org/data/) data.
+
+
+
+**Credits:**    
+The following packages were used: [flexdashboard](https://cran.r-project.org/web/packages/flexdashboard/index.html), [rgdal](https://cran.r-project.org/web/packages/rgdal/index.html), [dplyr](https://cran.r-project.org/web/packages/dplyr/index.html), [leaflet](https://cran.r-project.org/web/packages/leaflet/index.html), [d3scatter](https://github.com/jcheng5/d3scatter), [DT](https://cran.r-project.org/web/packages/DT/index.html), [gapminder](https://cran.r-project.org/web/packages/gapminder/index.html), [countrycode](https://cran.r-project.org/web/packages/countrycode/index.html),
+[rworldmap](https://cran.r-project.org/web/packages/rworldmap/index.html), and [spatialEco](https://cran.r-project.org/web/packages/spatialEco/index.html). 
+
+
+Row {data-height=550}
+-------------------------------------
+
+###
+
+```{r}
+library(leaflet)
+pal <- colorFactor(c("#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd"), domain = c("Africa", "Americas", "Asia", "Europe", "Oceania"), ordered = FALSE)
+leaflet(sd) %>% 
+  setView(9.998176, 14.531777, zoom = 2) %>%
+  addProviderTiles("CartoDB.Positron") %>% 
+  addPolygons(data = world_NA, color = "#969696", weight = 1, fillColor = "#808080") %>% 
+  addPolygons(color = "#969696", weight = 2, fillColor = ~pal(continent), fillOpacity = 0.8, label = ~as.character(country))
+```
+
+Row {data-height=450}
+-------------------------------------
+
+###
+
+```{r}
+library(d3scatter)
+d3scatter(sd$transform(as.data.frame), x = ~gdpPrcp, y = ~lifeExp, color = ~continent, x_label = "Income per person", y_label = "Life expectancy")
+```
+
+###
+
+```{r}
+library(DT)
+datatable(sd$transform(as.data.frame), rownames = FALSE, extensions = 'Scroller', 
+          options = list(scrollY = 200, scroller = TRUE, columnDefs = list(list(className = 'dt-left', targets = 0:3))))
+```

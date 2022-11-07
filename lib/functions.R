@@ -1,27 +1,43 @@
+# packages ----
 if (!require("librarian")){
   install.packages("librarian") }
 librarian::shelf(
-  glue, here, leaflet, readr, sf)
+  dplyr, fs, geojsonsf, glue, here, httr2, leaflet,
+  mapview, purrr, readr, sf, stringr, tibble, zip)
 options(readr.show_col_types = F)
 
-dir_upload <- "/Users/bbest/My Drive/projects/mbon-cross/Map of MBON Activities - Upload Form (File responses)/File(s) (File responses)"
-p2p_csv    <- glue("{dir_upload}/sites - Enrique Montes.csv")
+# functions ----
+mbon_activities_map <- function(){
 
-pts_p2p <- read_csv(p2p_csv) %>%
-  st_as_sf(
-    coords = c("lon", "lat"), crs = 4326)
+  # * activities with spatial ----
+  # d <- read_csv(here("data/_activities.csv")) %>%
+  #   mutate(
+  #     geo       = glue("{dir_data}/{geojson}"),
+  #     sf        = map(geo, read_sf),
+  #     geom = map(sf, function(x){
+  #       st_geometry(x) %>%
+  #         st_union()}))
 
-mbon_map <- function(){
+  # * leaflet map ----
   leaflet() %>%
     addProviderTiles(
       providers$Stamen.Toner, group = "Toner") %>%
     addProviderTiles(
       providers$Esri.OceanBasemap, group = "Ocean") %>%
     addCircleMarkers(
-      data = pts_p2p, group = "Pole to Pole",
-      label = ~name, radius = 2) %>%
+      data = read_sf(here("data/p2p.geojson")),
+      group = "Pole to Pole",
+      label = ~name, radius = 1) %>%
+    addPolygons(
+      data = read_sf(here("data/sbc.geojson")),
+      group = "Santa Barbara Channel") %>%
+    addPolygons(
+      data = read_sf(here("data/sfl.geojson")),
+      group = "South Florida") %>%
     addLayersControl(
-      baseGroups = c("Ocean", "Toner"),
-      overlayGroups = c("Pole to Pole"),
+      baseGroups = c(
+        "Ocean", "Toner"),
+      overlayGroups = c(
+        "Pole to Pole", "Santa Barbara Channel", "South Florida"),
       options = layersControlOptions(collapsed = FALSE))
 }
