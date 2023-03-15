@@ -52,6 +52,7 @@ goos_sf <- function(alternate, ...){
 }
 
 # fetch datasets ----
+#   programmatic version of [Search "MBON" at GOOS BioEco GeoNode](https://geonode.goosocean.org/search/?title__icontains=MBON&abstract__icontains=MBON&purpose__icontains=MBON&f_method=or&limit=5&offset=0)
 d_json <- request(goos_api) %>%
   req_url_path_append("resources") %>%
   req_url_query(
@@ -61,6 +62,8 @@ d_json <- request(goos_api) %>%
   req_perform() %>%
   resp_body_json()
 
+# extract relevant fields from nested list,
+#   including URL `detail_url` and package id `pk`
 d <- tibble(
   r          = d_json$resources,
   title      = map_chr(r, "title"),
@@ -89,18 +92,21 @@ d <- d %>%
     by = "pk")
 
 # get spatial for datasets ----
+
+# initially try to download and read as spatial features
 d <- d %>%
   mutate(
     dl = map2_lgl(pk, alternate, dl_goos),
     sf = map(alternate, goos_sf))
 
+# for those datasets in which the first method dl_goos() failed,
+#   use alternative method of forming the url to the geojson file
 d %>%
   filter(!is.na(sf)) %>%
   pwalk(function(sf, ds_key, ...){
     ds_geo <- here(glue("data/{ds_key}.geojson"))
     write_sf(sf, ds_geo, delete_dsn = T)
   })
-
 d %>%
   filter(is.na(sf)) %>%
   pwalk(function(alternate, ds_key, ...){

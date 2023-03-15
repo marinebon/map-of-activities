@@ -29,7 +29,7 @@ mbon_activities_map <- function(){
     lapply(htmltools::HTML)
 
   leaflet() |>
-    # * basemaps ----
+    # basemaps ----
     addProviderTiles(
       providers$Stamen.Toner, group = "Toner") |>
     # add base: blue bathymetry and light brown/green topography
@@ -44,6 +44,10 @@ mbon_activities_map <- function(){
       options = providerTileOptions(
         variant = "Ocean/World_Ocean_Reference"),
       group = "Ocean") |>
+    # * nh ----
+    addPolygons(
+      data = read_sf(here("data/nh.geojson")),
+      group = "New Hampshire") |>
     # * p2p ----
     addCircleMarkers(
       data = read_sf(here("data/p2p.geojson")),
@@ -68,6 +72,6 @@ mbon_activities_map <- function(){
       baseGroups = c(
         "Ocean", "Toner"),
       overlayGroups = c(
-        "Santa Barbara Channel", "South Florida", "OBIS", "Pole to Pole"),
+        "New Hampshire", "OBIS", "Santa Barbara Channel", "South Florida", "Pole to Pole"),
       options = layersControlOptions(collapsed = FALSE))
 }
