@@ -18,21 +18,20 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Conda
-        uses: s-weigand/setup-conda@v1
+      - name: Setup Micromamba
+        uses: mamba-org/provision-with-micromamba@main
         with:
-          activate-conda: false
-          conda-channels: conda-forge
+          environment-file: false
           
       - name: Build environment
         shell: bash -l {0}
         run: |
-          conda env create -f environment.yml       
+          micromamba create --file environment.yml --name map-of-activities       
           
       - name: Execute Notebook
         shell: bash -l {0}
         run: |
-          conda activate map-of-activities
+          micromamba activate map-of-activities
           jupyter nbconvert --to notebook --execute map-of-activities.ipynb --output=map-of-activities-output.ipynb
           
       - name: Publish HTML
