@@ -1,0 +1,12 @@
+name: map-of-activities
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - r
+  - jupyterlab
+  - jupyter
+  - folium
+  - geopandas
+  - pyobis
+prefix: C:\Users\Mathew.Biddle\programs\Miniforge\envs\map-of-activities
