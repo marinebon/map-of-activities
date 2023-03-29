@@ -9,4 +9,3 @@ dependencies:
   - folium
   - geopandas
   - pyobis
-prefix: C:\Users\Mathew.Biddle\programs\Miniforge\envs\map-of-activities
