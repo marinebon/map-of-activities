@@ -1,9 +1,0 @@
-[
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Map of Activities",
-    "section": "",
-    "text": "This map (code: mbon_activities_map() in functions.R) so far is a quick mockup of data combined from these sources:\n\nMap of MBON Activities - Upload Form\nsource & files: mbon-cross - Google Drive\ncode: process_uploads.R → p2p.geojson\nSearch for “MBON” - GOOS BioEco GeoNode\nGOOS Biology and Ecosystems GeoNode\ncode: process_goosocean.R → sbc.geojson, sfl.geojson\n\nTODO: Incorporate spatial footprints of MBON activities from work by Matthew Biddle, Abby Benson et al.:\n\nMBON dataset registration\nOBIS notebook\nlink? missed it in notes X-MBON Meeting 2022-11-01 to -04 - Google Doc"
-  }
-]

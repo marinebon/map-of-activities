@@ -15,10 +15,11 @@ permissions:
   pages: write
   id-token: write
 
-# Allow one concurrent deployment
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   # Single deploy job since we're just deploying
@@ -30,13 +31,30 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
+      - name: Setup Micromamba
+        uses: mamba-org/provision-with-micromamba@main
+        with:
+          environment-file: false
+
+      - name: Install conda environment
+        shell: bash -l {0}
+        run: |
+          micromamba create --file environment.yml   
+          
+      - name: Execute Notebook
+        shell: bash -l {0}
+        run: |
+          micromamba activate map-of-activities
+          jupyter nbconvert --to notebook --execute map-of-activities.ipynb --output=map-of-activities-output.ipynb
+          
       - name: Setup Pages
-        uses: actions/configure-pages@v2
+        uses: actions/configure-pages@v3
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload entire repository
-          path: './_site'
+          path: './docs'
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v2
