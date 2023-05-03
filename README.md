@@ -6,6 +6,9 @@ Information is in this notebook is harvested from the [GOOS Bio-Eco portal](http
   * GOOS BioEco US MBON collection : https://geonode.goosocean.org/maps/1043
   * UNESCO OBIS US MBON collection : https://obis.org/institute/23070
 
+The recommended workflow for adding data to this map is provided via [marinebon/data-management-checklists
+](https://github.com/marinebon/data-management-checklists).
+
 ## Run Jupyter Notebook
 Install conda: <https://docs.conda.io/projects/conda/en/latest/user-guide/install/windows.html>
 
