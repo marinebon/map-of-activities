@@ -7,5 +7,5 @@ dependencies:
   - jupyterlab
   - jupyter
   - folium
-  - geopandas
+  - geopandas<0.13
   - pyobis
