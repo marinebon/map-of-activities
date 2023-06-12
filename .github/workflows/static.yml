@@ -32,11 +32,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-     - name: Setup Micromamba
-       uses: mamba-org/setup-micromamba@v1
-       init-shell: bash
-       with:
-         environment-file: environment.yml
+      - name: Setup Micromamba
+        uses: mamba-org/setup-micromamba@v1
+        init-shell: bash
+        with:
+          environment-file: environment.yml
           
       - name: Execute Notebook
         shell: bash -l {0}
