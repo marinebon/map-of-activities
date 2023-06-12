@@ -2,10 +2,8 @@ name: map-of-activities
 channels:
   - conda-forge
 dependencies:
-  - python=3.10
-  - r
-  - jupyterlab
+  - python=3.11
   - jupyter
   - folium
-  - geopandas<0.13
+  - geopandas >=0.13.1
   - pyobis
