@@ -32,20 +32,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup Micromamba
-        uses: mamba-org/provision-with-micromamba@main
-        with:
-          environment-file: false
-
-      - name: Install conda environment
-        shell: bash -l {0}
-        run: |
-          micromamba create --file environment.yml   
+     - name: Setup Micromamba
+       uses: mamba-org/setup-micromamba@v1
+       init-shell: bash
+       with:
+         environment-file: environment.yml
           
       - name: Execute Notebook
         shell: bash -l {0}
         run: |
-          micromamba activate map-of-activities
           jupyter nbconvert --to notebook --execute map-of-activities.ipynb --output=map-of-activities-output.ipynb
           
       - name: Setup Pages
