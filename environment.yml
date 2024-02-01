@@ -2,8 +2,8 @@ name: map-of-activities
 channels:
   - conda-forge
 dependencies:
-  - python=3.11
-  - jupyter
+  - python=3.12
+  - azure-core-cpp=1.10  # we can unpin this when the segfault is fixed
   - folium
   - geopandas >=0.13.1
   - pyobis
