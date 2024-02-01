@@ -36,9 +36,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Micromamba
+      - name: Setup Micromamba Python
         uses: mamba-org/setup-micromamba@v1
         with:
+          environment-name: MAP
           init-shell: bash
           environment-file: conda-lock.yml
           
