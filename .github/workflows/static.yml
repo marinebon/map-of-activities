@@ -36,17 +36,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Micromamba
+      - name: Setup Micromamba Python
         uses: mamba-org/setup-micromamba@v1
         with:
+          environment-name: MAP
           init-shell: bash
-          environment-file: environment.yml
+          environment-file: conda-lock.yml
           
-      - name: Execute Notebook
+      - name: Execute the code
         shell: bash -l {0}
         run: |
-          jupyter nbconvert --to notebook --execute map-of-activities.ipynb --output=map-of-activities-output.ipynb
-          
+          python map-of-activities.py
+
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact

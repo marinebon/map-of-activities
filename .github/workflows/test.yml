@@ -1,0 +1,24 @@
+name: Full Tests
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup Micromamba Python
+      uses: mamba-org/setup-micromamba@v1
+      with:
+        environment-name: MAP
+        init-shell: bash
+        environment-file: conda-lock.yml
+
+    - name: Tests
+      shell: bash -l {0}
+      run: |
+        python map-of-activities.py
