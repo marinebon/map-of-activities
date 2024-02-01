@@ -40,7 +40,7 @@ jobs:
         uses: mamba-org/setup-micromamba@v1
         with:
           init-shell: bash
-          environment-file: environment.yml
+          environment-file: conda-lock.yml
           
       - name: Execute Notebook
         shell: bash -l {0}
