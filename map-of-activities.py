@@ -70,7 +70,7 @@ for datasetid in df_meta["id"]:
     df["dataset_id"] = datasetid
     df["short_name"] = meta["url"].split("=")[-1]
     df["short_name_group"] = (
-        df["short_name"].replace("\d", "", regex=True).str.rstrip("_")
+        df["short_name"].replace(r"\d", "", regex=True).str.rstrip("_")
     )
     df["url"] = meta["url"].replace(
         "https://www1.usgs.gov/obis-usa/ipt", "https://ipt-obis.gbif.us"
