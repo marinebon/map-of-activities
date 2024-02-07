@@ -149,7 +149,7 @@ for name, group in gdf.groupby(by="short_name_group"):
             fields=["ref"],
             aliases=[""],
         ),
-        show=False,
+        show=True,
     ).add_to(m)
 
 
@@ -168,7 +168,7 @@ for layer in layers.keys():
         name="BioEco: {}".format(name),
         tooltip=tooltip,
         popup=popup,
-        show=False,
+        show=True,
     ).add_to(m)
 
 folium.LayerControl(collapsed=True).add_to(m)
