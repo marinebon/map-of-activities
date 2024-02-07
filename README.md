@@ -6,12 +6,13 @@ Information is in this notebook is harvested from the [GOOS Bio-Eco portal](http
   * GOOS BioEco US MBON collection : https://geonode.goosocean.org/maps/1043
   * UNESCO OBIS US MBON collection : https://obis.org/institute/23070
 
-## Run Jupyter Notebook
+## Run Python code in a conda environment
 Install conda: <https://docs.conda.io/projects/conda/en/latest/user-guide/install/windows.html>
 
 Create `map-of-activity` environment:
 ```bash
-conda create --file environment.yml
+conda install conda-lock  # if you don't have conda-lock installed
+conda env create --name map-of-activities --file conda-lock.yml
 ```
 
 Activate environment:
@@ -19,7 +20,7 @@ Activate environment:
 conda activate map-of-activities
 ```
 
-Run Jupyter and open notebook to run:
+Run the code with:
 ```bash
-jupyter nbclassic
+python map-of-activities.py
 ```
