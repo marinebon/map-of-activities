@@ -21,7 +21,7 @@ import pyobis
 import requests
 
 pk = 1043  # Matt's map
-url = f"https://geonode.goosocean.org/api/v2/maps/{1043}/local_layers"
+url = f"https://geonode.goosocean.org/api/v2/maps/{pk}/local_layers"
 
 data = requests.get(url).json()
 
