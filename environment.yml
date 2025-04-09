@@ -9,4 +9,3 @@ dependencies:
   - pyobis
   - selenium
   - beautifulsoup4
-  - json

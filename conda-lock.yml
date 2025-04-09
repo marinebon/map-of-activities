@@ -13,10 +13,10 @@
 version: 1
 metadata:
   content_hash:
-    linux-64: 459da7d98bf2cb14a6f508358b9e400338c78d225bc6e2d305c09b485a48f9c8
-    osx-arm64: 3fde437c5c49dcab6b820d0d8a684a44f523ea87146b74eb87dd5223611e5be0
-    osx-64: 77a5d62ed4e2554b5af9fd8d727f81c603e2c30711f13bd5dc4744644ba93e42
-    win-64: eb8cffccd9563ac7533495dc8f542a292e40db77ad48af7d80b0cbd55bf1d5f0
+    linux-64: cdb86e87460ce1482e03462ce7ff2be61c306b7b04e5399b6333fb8172df9ad9
+    osx-arm64: 23b7627babd2616505d6dc46e3dc0a580bae43426964d3203198fdb0ba4406a7
+    osx-64: e21ca4a1d4670dff730eef23c4b5d443e73f3eb7a6c1ab9fa67b6b3a53fd4359
+    win-64: 3f6a01cb2385584c08371326ec7dadb70a0ab3668ee11e2cda13ad38ae32c502
   channels:
   - url: conda-forge
     used_env_vars: []
@@ -233,6 +233,62 @@ package:
   hash:
     md5: cceb803b800f0ea2c8d1f259c0a03136
     sha256: 788b051ecbf9c8854be1ef627a654007df3a41f6dbe83d41d97d1a2f42b9a0e6
+  category: main
+  optional: false
+- name: beautifulsoup4
+  version: 4.13.3
+  manager: conda
+  platform: linux-64
+  dependencies:
+    python: '>=3.9'
+    soupsieve: '>=1.2'
+    typing-extensions: ''
+  url: https://conda.anaconda.org/conda-forge/noarch/beautifulsoup4-4.13.3-pyha770c72_0.conda
+  hash:
+    md5: 373374a3ed20141090504031dc7b693e
+    sha256: 4ce42860292a57867cfc81a5d261fb9886fc709a34eca52164cc8bbf6d03de9f
+  category: main
+  optional: false
+- name: beautifulsoup4
+  version: 4.13.3
+  manager: conda
+  platform: osx-64
+  dependencies:
+    python: '>=3.9'
+    soupsieve: '>=1.2'
+    typing-extensions: ''
+  url: https://conda.anaconda.org/conda-forge/noarch/beautifulsoup4-4.13.3-pyha770c72_0.conda
+  hash:
+    md5: 373374a3ed20141090504031dc7b693e
+    sha256: 4ce42860292a57867cfc81a5d261fb9886fc709a34eca52164cc8bbf6d03de9f
+  category: main
+  optional: false
+- name: beautifulsoup4
+  version: 4.13.3
+  manager: conda
+  platform: osx-arm64
+  dependencies:
+    python: '>=3.9'
+    soupsieve: '>=1.2'
+    typing-extensions: ''
+  url: https://conda.anaconda.org/conda-forge/noarch/beautifulsoup4-4.13.3-pyha770c72_0.conda
+  hash:
+    md5: 373374a3ed20141090504031dc7b693e
+    sha256: 4ce42860292a57867cfc81a5d261fb9886fc709a34eca52164cc8bbf6d03de9f
+  category: main
+  optional: false
+- name: beautifulsoup4
+  version: 4.13.3
+  manager: conda
+  platform: win-64
+  dependencies:
+    python: '>=3.9'
+    soupsieve: '>=1.2'
+    typing-extensions: ''
+  url: https://conda.anaconda.org/conda-forge/noarch/beautifulsoup4-4.13.3-pyha770c72_0.conda
+  hash:
+    md5: 373374a3ed20141090504031dc7b693e
+    sha256: 4ce42860292a57867cfc81a5d261fb9886fc709a34eca52164cc8bbf6d03de9f
   category: main
   optional: false
 - name: blosc
@@ -7215,6 +7271,54 @@ package:
     sha256: d1e3e06b5cf26093047e63c8cc77b70d970411c5cbc0cb1fad461a8a8df599f7
   category: main
   optional: false
+- name: soupsieve
+  version: '2.5'
+  manager: conda
+  platform: linux-64
+  dependencies:
+    python: '>=3.8'
+  url: https://conda.anaconda.org/conda-forge/noarch/soupsieve-2.5-pyhd8ed1ab_1.conda
+  hash:
+    md5: 3f144b2c34f8cb5a9abd9ed23a39c561
+    sha256: 54ae221033db8fbcd4998ccb07f3c3828b4d77e73b0c72b18c1d6a507059059c
+  category: main
+  optional: false
+- name: soupsieve
+  version: '2.5'
+  manager: conda
+  platform: osx-64
+  dependencies:
+    python: '>=3.8'
+  url: https://conda.anaconda.org/conda-forge/noarch/soupsieve-2.5-pyhd8ed1ab_1.conda
+  hash:
+    md5: 3f144b2c34f8cb5a9abd9ed23a39c561
+    sha256: 54ae221033db8fbcd4998ccb07f3c3828b4d77e73b0c72b18c1d6a507059059c
+  category: main
+  optional: false
+- name: soupsieve
+  version: '2.5'
+  manager: conda
+  platform: osx-arm64
+  dependencies:
+    python: '>=3.8'
+  url: https://conda.anaconda.org/conda-forge/noarch/soupsieve-2.5-pyhd8ed1ab_1.conda
+  hash:
+    md5: 3f144b2c34f8cb5a9abd9ed23a39c561
+    sha256: 54ae221033db8fbcd4998ccb07f3c3828b4d77e73b0c72b18c1d6a507059059c
+  category: main
+  optional: false
+- name: soupsieve
+  version: '2.5'
+  manager: conda
+  platform: win-64
+  dependencies:
+    python: '>=3.8'
+  url: https://conda.anaconda.org/conda-forge/noarch/soupsieve-2.5-pyhd8ed1ab_1.conda
+  hash:
+    md5: 3f144b2c34f8cb5a9abd9ed23a39c561
+    sha256: 54ae221033db8fbcd4998ccb07f3c3828b4d77e73b0c72b18c1d6a507059059c
+  category: main
+  optional: false
 - name: sqlite
   version: 3.49.1
   manager: conda
@@ -7582,6 +7686,54 @@ package:
   hash:
     md5: 9bb27d491b0dc9ed94ecfee8490bc0e7
     sha256: c02936916d2d3b626d4cdd21ec09aa3b8a5d51bb0c2734d05a031c6985370cef
+  category: main
+  optional: false
+- name: typing-extensions
+  version: 4.13.1
+  manager: conda
+  platform: linux-64
+  dependencies:
+    typing_extensions: ==4.13.1
+  url: https://conda.anaconda.org/conda-forge/noarch/typing-extensions-4.13.1-hf5ce1d7_0.conda
+  hash:
+    md5: e37cf790f710cf72fd13dcb6b2d4370c
+    sha256: f38c8a4cb27155a3c0d2853683569b1b1b38b31aa17195c23789367868d2125e
+  category: main
+  optional: false
+- name: typing-extensions
+  version: 4.13.1
+  manager: conda
+  platform: osx-64
+  dependencies:
+    typing_extensions: ==4.13.1
+  url: https://conda.anaconda.org/conda-forge/noarch/typing-extensions-4.13.1-hf5ce1d7_0.conda
+  hash:
+    md5: e37cf790f710cf72fd13dcb6b2d4370c
+    sha256: f38c8a4cb27155a3c0d2853683569b1b1b38b31aa17195c23789367868d2125e
+  category: main
+  optional: false
+- name: typing-extensions
+  version: 4.13.1
+  manager: conda
+  platform: osx-arm64
+  dependencies:
+    typing_extensions: ==4.13.1
+  url: https://conda.anaconda.org/conda-forge/noarch/typing-extensions-4.13.1-hf5ce1d7_0.conda
+  hash:
+    md5: e37cf790f710cf72fd13dcb6b2d4370c
+    sha256: f38c8a4cb27155a3c0d2853683569b1b1b38b31aa17195c23789367868d2125e
+  category: main
+  optional: false
+- name: typing-extensions
+  version: 4.13.1
+  manager: conda
+  platform: win-64
+  dependencies:
+    typing_extensions: ==4.13.1
+  url: https://conda.anaconda.org/conda-forge/noarch/typing-extensions-4.13.1-hf5ce1d7_0.conda
+  hash:
+    md5: e37cf790f710cf72fd13dcb6b2d4370c
+    sha256: f38c8a4cb27155a3c0d2853683569b1b1b38b31aa17195c23789367868d2125e
   category: main
   optional: false
 - name: typing_extensions
