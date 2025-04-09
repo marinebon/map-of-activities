@@ -434,4 +434,4 @@ for name, group in gdf_reg[~gdf_reg['geometry'].isna()].groupby(by="Dataset titl
 ## Configure the map
 folium.LayerControl(collapsed=True).add_to(m)
 m.fit_bounds(m.get_bounds())
-m.save("docs/index.html")
+m.save("index.html")
