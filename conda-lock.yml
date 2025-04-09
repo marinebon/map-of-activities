@@ -13,10 +13,10 @@
 version: 1
 metadata:
   content_hash:
-    linux-64: cdb86e87460ce1482e03462ce7ff2be61c306b7b04e5399b6333fb8172df9ad9
-    osx-arm64: 23b7627babd2616505d6dc46e3dc0a580bae43426964d3203198fdb0ba4406a7
-    osx-64: e21ca4a1d4670dff730eef23c4b5d443e73f3eb7a6c1ab9fa67b6b3a53fd4359
-    win-64: 3f6a01cb2385584c08371326ec7dadb70a0ab3668ee11e2cda13ad38ae32c502
+    linux-64: f1b73f847e99eb18f57059c7f063138de6730b0b1a1a83f15687170cb5122784
+    osx-arm64: 008a7fc97f79f92c704635f3ed711afa3ba7a9214b02aafe327e5ad3ff718271
+    osx-64: 5ad323d53316fdf0953bdd043aa9ec7ee496cb9c8d80d390b4b9671be4d6c2d1
+    win-64: 5d9f20f83c3115726f9fd7c587201af96fc59cf4fab58a7b541dcaf2595ea56a
   channels:
   - url: conda-forge
     used_env_vars: []
@@ -4547,6 +4547,58 @@ package:
     sha256: 0a013527f784f4702dc18460070d8ec79d1ebb5087dd9e678d6afbeaca68d2ac
   category: main
   optional: false
+- name: libxslt
+  version: 1.1.39
+  manager: conda
+  platform: linux-64
+  dependencies:
+    libgcc-ng: '>=12'
+    libxml2: '>=2.12.1,<2.14.0a0'
+  url: https://conda.anaconda.org/conda-forge/linux-64/libxslt-1.1.39-h76b75d6_0.conda
+  hash:
+    md5: e71f31f8cfb0a91439f2086fc8aa0461
+    sha256: 684e9b67ef7b9ca0ca993762eeb39705ec58e2e7f958555c758da7ef416db9f3
+  category: main
+  optional: false
+- name: libxslt
+  version: 1.1.39
+  manager: conda
+  platform: osx-64
+  dependencies:
+    libxml2: '>=2.12.1,<2.14.0a0'
+  url: https://conda.anaconda.org/conda-forge/osx-64/libxslt-1.1.39-h03b04e6_0.conda
+  hash:
+    md5: a6e0cec6b3517ffc6b5d36a920fc9312
+    sha256: decfc5614a10231a17543b7366616fb2d88c14be6dd9dd5ecde63aa9a5acfb9e
+  category: main
+  optional: false
+- name: libxslt
+  version: 1.1.39
+  manager: conda
+  platform: osx-arm64
+  dependencies:
+    libxml2: '>=2.12.1,<2.14.0a0'
+  url: https://conda.anaconda.org/conda-forge/osx-arm64/libxslt-1.1.39-h223e5b9_0.conda
+  hash:
+    md5: 560c9cacc33e927f55b998eaa0cb1732
+    sha256: 2f1d99ef3fb960f23a63f06cf65ee621a5594a8b4616f35d9805be44617a92af
+  category: main
+  optional: false
+- name: libxslt
+  version: 1.1.39
+  manager: conda
+  platform: win-64
+  dependencies:
+    libxml2: '>=2.12.1,<2.14.0a0'
+    ucrt: '>=10.0.20348.0'
+    vc: '>=14.2,<15'
+    vc14_runtime: '>=14.29.30139'
+  url: https://conda.anaconda.org/conda-forge/win-64/libxslt-1.1.39-h3df6e99_0.conda
+  hash:
+    md5: 279ee338c9b34871d578cb3c7aa68f70
+    sha256: 6e3d99466d2076c35e7ac8dcdfe604da3d593f55b74a5b8e96c2b2ff63c247aa
+  category: main
+  optional: false
 - name: libzlib
   version: 1.3.1
   manager: conda
@@ -4620,6 +4672,77 @@ package:
   hash:
     md5: 922f10fcb42090cdb0b74340dee96c08
     sha256: 3510c986f94d8baf8bfef834c0a4fa9f059dbaa5940abe59c60342761fb77e27
+  category: main
+  optional: false
+- name: lxml
+  version: 5.3.2
+  manager: conda
+  platform: linux-64
+  dependencies:
+    __glibc: '>=2.17,<3.0.a0'
+    libgcc: '>=13'
+    libxml2: '>=2.13.7,<2.14.0a0'
+    libxslt: '>=1.1.39,<2.0a0'
+    libzlib: '>=1.3.1,<2.0a0'
+    python: '>=3.12,<3.13.0a0'
+    python_abi: 3.12.*
+  url: https://conda.anaconda.org/conda-forge/linux-64/lxml-5.3.2-py312h68d7fa5_0.conda
+  hash:
+    md5: d18111b2b7611a01df38155dce88ac7a
+    sha256: c979cd486d6a126d96f5a1a51c930c7326598f57f64b20e3c36e9f0a3e325991
+  category: main
+  optional: false
+- name: lxml
+  version: 5.3.2
+  manager: conda
+  platform: osx-64
+  dependencies:
+    __osx: '>=10.13'
+    libxml2: '>=2.13.7,<2.14.0a0'
+    libxslt: '>=1.1.39,<2.0a0'
+    libzlib: '>=1.3.1,<2.0a0'
+    python: '>=3.12,<3.13.0a0'
+    python_abi: 3.12.*
+  url: https://conda.anaconda.org/conda-forge/osx-64/lxml-5.3.2-py312h3ce7cfc_0.conda
+  hash:
+    md5: 87150581a1fe9ccbd5f8656e6cabe9d0
+    sha256: 47da0c7a4d89252b657535adb55ae21733601a0e9af6670104fd91586f20cd30
+  category: main
+  optional: false
+- name: lxml
+  version: 5.3.2
+  manager: conda
+  platform: osx-arm64
+  dependencies:
+    __osx: '>=11.0'
+    libxml2: '>=2.13.7,<2.14.0a0'
+    libxslt: '>=1.1.39,<2.0a0'
+    libzlib: '>=1.3.1,<2.0a0'
+    python: '>=3.12,<3.13.0a0'
+    python_abi: 3.12.*
+  url: https://conda.anaconda.org/conda-forge/osx-arm64/lxml-5.3.2-py312hc2c121e_0.conda
+  hash:
+    md5: 2a6c2741a8335697bb908470d82d7a4e
+    sha256: 142c21f6a436643dc919d786d821c7b6a772d2aaa707d2195bd6189d12387324
+  category: main
+  optional: false
+- name: lxml
+  version: 5.3.2
+  manager: conda
+  platform: win-64
+  dependencies:
+    libxml2: '>=2.13.7,<2.14.0a0'
+    libxslt: '>=1.1.39,<2.0a0'
+    libzlib: '>=1.3.1,<2.0a0'
+    python: '>=3.12,<3.13.0a0'
+    python_abi: 3.12.*
+    ucrt: '>=10.0.20348.0'
+    vc: '>=14.2,<15'
+    vc14_runtime: '>=14.29.30139'
+  url: https://conda.anaconda.org/conda-forge/win-64/lxml-5.3.2-py312hef2e38f_0.conda
+  hash:
+    md5: 2ba6ad0963b2df9d76d42924f07ace6d
+    sha256: 07db65cb1317c12a125e243f995ee98e58bfc4fa7aefc10ddd0e3ca867ad1da6
   category: main
   optional: false
 - name: lz4-c
