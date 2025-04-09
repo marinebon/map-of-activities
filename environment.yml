@@ -8,3 +8,4 @@ dependencies:
   - geopandas >=0.13.1
   - pyobis
   - selenium
+  - beautifulsoup4
